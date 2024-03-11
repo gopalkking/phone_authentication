@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phone_authentication/screens/register_page.dart';
 import 'package:phone_authentication/widgets/custom_button.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -30,15 +31,25 @@ class WelcomePage extends StatelessWidget {
               ),
               const Text(
                 "Never a better time than now a start.",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: Colors.black38),
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black38),
               ),
-               const SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
                 width: double.infinity,
                 height: 50,
-                child: CustomButton(text: "Get Started", onPressed: (){}),
+                child: CustomButton(
+                    text: "Get Started",
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const  RegisterPage()));
+                    }),
               )
             ],
           ),
