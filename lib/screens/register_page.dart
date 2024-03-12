@@ -1,5 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:phone_authentication/widgets/custom_button.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -11,7 +12,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController phoneController = TextEditingController();
   Country selectedCountry = Country(
-      phoneCode: "+91",
+      phoneCode: "91",
       countryCode: "IN",
       e164Sc: 0,
       geographic: true,
@@ -63,6 +64,8 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 20),
               TextFormField(
                 controller: phoneController,
+                style:
+                    const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 onChanged: (value) {
                   setState(() {
                     phoneController.text = value;
@@ -70,6 +73,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
                 decoration: InputDecoration(
                   hintText: "Enter phone number",
+                  hintStyle: const TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      color: Colors.grey),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: const BorderSide(color: Colors.black12),
@@ -94,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Text(
                         "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
                         style: const TextStyle(
-                            fontSize: 20,
+                            fontSize: 22,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
@@ -104,6 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ? Container(
                           height: 30,
                           width: 30,
+                          margin: const EdgeInsets.all(10.0),
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: Colors.green),
                           child: const Icon(
@@ -114,7 +122,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         )
                       : null,
                 ),
-              )
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: CustomButton(text: 'Login', onPressed: () {}))
             ],
           ),
         ),

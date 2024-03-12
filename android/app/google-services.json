@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279831273175",
+    "project_id": "phone-authentication-bfaae",
+    "storage_bucket": "phone-authentication-bfaae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279831273175:android:5f7a9802ea14b53c599a92",
+        "android_client_info": {
+          "package_name": "com.example.phone_authentication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIXrYlhK4F4HBooj9eG67GFh_QFu-itfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
